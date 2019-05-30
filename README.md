@@ -44,6 +44,10 @@ password: winteriscoming
 Once an instance is constructed, you can chain off of it to construct a specific request. (Think of it as a query-builder for WordPress!)
 They have an extensive API documentation
 
+## Create a Woocommerce REST API Key
+
+* WordPress Dashboard > WooCommerce > Settings > Advanced > REST API > Create an API Key
+
 ## Credits
 
 * Cloned from [Poslight Headless-wp-starter](https://github.com/postlight/headless-wp-starter)
