@@ -7,6 +7,13 @@ const handle = app.getRequestHandler();
 
 const WooCommerceAPI = require( 'woocommerce-api' );
 const wooConfig = require( './wooConfig' );
+const WooCommerce = new WooCommerceAPI({
+	url: 'http://localhost:8080',
+	consumerKey: wooConfig.wooConsumerKey,
+	consumerSecret: wooConfig.wooSecret,
+	wpAPI: true,
+	version: 'wc/v3'
+});
 
 app
   .prepare()
@@ -41,16 +48,21 @@ app
 	   * Get All products
 	   */
 	  server.get( '/getProducts', ( request, response ) => {
-		  
-		  const WooCommerce = new WooCommerceAPI({
-			  url: 'http://localhost:8080',
-			  consumerKey: wooConfig.wooConsumerKey,
-			  consumerSecret: wooConfig.wooSecret,
-			  wpAPI: true,
-			  version: 'wc/v3'
-		  });
 
+		  // Get All Products
 		  WooCommerce.get('products', function(err, data, res) {
+			  response.json( JSON.parse(res) );
+		  });
+	  } );
+
+	  /**
+	   * Get Product by Id
+	   */
+	  server.get( '/getProduct/:id', ( request, response ) => {
+	  	    const productId = request.params.id;
+
+		  // Get Product by Id
+		  WooCommerce.get( `products/${productId}`, function(err, data, res) {
 			  response.json( JSON.parse(res) );
 		  });
 	  } );

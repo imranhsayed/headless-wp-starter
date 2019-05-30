@@ -48,7 +48,7 @@ class Products extends Component {
 										<img className="product-image" src={item.images[0].src} alt={ item.name }/>
 										<h5 className="product-name">{item.name}</h5>
 										<p className="product-price">${item.price}</p>
-										<Link href={`/product/${item.id}`}><a className="product-view-link">View</a></Link>
+										<Link href={`/product?id=${item.id}`}><a className="product-view-link">View</a></Link>
 									</div>
 								) )
 							}
