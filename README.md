@@ -9,13 +9,20 @@
 5. Once install add this to your wp-config file ( `define('JWT_AUTH_SECRET_KEY', '&BZd]N-ghz|hbH`=%~a5z(`mR=n%7#8-Iz@KoqtDhQ6(8h$og%-IbI#>N*T`s9Dg');` )
 
 ## Backend ( WordPress Dashboard ): ( http://localhost:8080/wp-admin/ )
+
+* Start Docker for WordPress
+
 `docker-compose up -d wp-headless`
+
 ```ruby
 username: nedstark
 password: winteriscoming 
 ```
 
 ## Front End: ( http://localhost:3000 )
+
+* Start Front end server
+
 `cd frontend && yarn && yarn start`
 
 ## What it does:
