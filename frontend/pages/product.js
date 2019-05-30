@@ -11,7 +11,7 @@ const Product = withRouter( props  => {
 
 
 	const [ loading, setLoading ] = useState( false );
-	const [ product, setProduct ] = useState( {} );
+	const [ product, setProduct ] = useState( null );
 
 	const { headerMenu } = props;
 
@@ -25,12 +25,14 @@ const Product = withRouter( props  => {
 			} )
 			.catch( err => console.warn( err.response.data ) );
 	}, [] );
+
 	console.warn( 'product', product );
+
 	return (
 		<Layout>
 			<Menu menu={headerMenu} />
 			{ loading ? <h3>Loading...</h3> : '' }
-			{ Object.keys( product ).length ? (
+			{ product ? (
 
 				<div>
 					<h3>Products</h3>
