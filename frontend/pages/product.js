@@ -52,7 +52,7 @@ const Product = withRouter( props  => {
 } );
 
 Product.getInitialProps = async function( context ) {
-
+	return '';
 }
 
 

@@ -19,6 +19,7 @@ class Products extends Component {
 
 
 	static async getInitialProps(context) {
+		return '';
 	}
 
 	componentDidMount() {
