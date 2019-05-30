@@ -21,9 +21,13 @@ password: winteriscoming
 
 ## Front End: ( http://localhost:3000 )
 
-* Start Front end server
+* Install packages and start the front and server
 
 `cd frontend && yarn && yarn start`
+
+* Start Front end server
+
+`cd frontend yarn start`
 
 ## What it does:
 * Pulls the image from library/wordpress and downloads latest wordpress

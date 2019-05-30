@@ -5,6 +5,9 @@ const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
 
+const WooCommerceAPI = require( 'woocommerce-api' );
+const wooConfig = require( './wooConfig' );
+
 app
   .prepare()
   .then(() => {
@@ -33,6 +36,24 @@ app
       const queryParams = { id: req.params.id, wpnonce: req.params.wpnonce };
       app.render(req, res, actualPage, queryParams);
     });
+
+	  /**
+	   * Get All products
+	   */
+	  server.get( '/getProducts', ( request, response ) => {
+		  
+		  const WooCommerce = new WooCommerceAPI({
+			  url: 'http://localhost:8080',
+			  consumerKey: wooConfig.wooConsumerKey,
+			  consumerSecret: wooConfig.wooSecret,
+			  wpAPI: true,
+			  version: 'wc/v3'
+		  });
+
+		  WooCommerce.get('products', function(err, data, res) {
+			  response.json( JSON.parse(res) );
+		  });
+	  } );
 
     server.get('*', (req, res) => {
       return handle(req, res);

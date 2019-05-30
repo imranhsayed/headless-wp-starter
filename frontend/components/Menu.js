@@ -27,6 +27,7 @@ class Menu extends Component {
 
   render() {
     const { menu } = this.props;
+
     const { token, username } = this.state;
     const menuItems = menu.items.map(item => {
       if (item.object === 'custom') {
@@ -54,7 +55,11 @@ class Menu extends Component {
         <Link href="/">
           <a style={linkStyle}>Home</a>
         </Link>
-        {menuItems}
+        <Link href="/products">
+	      <a style={linkStyle}>Products</a>
+        </Link>
+
+	      {menuItems}
 
         {token ? (
           <button
