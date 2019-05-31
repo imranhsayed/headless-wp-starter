@@ -1,0 +1,16 @@
+{
+  "short_name": "Basic PWA",
+  "name": "Progressive Web App",
+  "icons": [
+	{
+	  "src": "/images/wordpress-plus-react-header.png",
+	  "type": "image/png",
+	  "sizes": "280x280"
+	}
+  ],
+  "start_url": ".",
+  "background_color": "#ccc",
+  "theme_color": "#000",
+  "display": "standalone",
+  "orientation": "portrait"
+}
