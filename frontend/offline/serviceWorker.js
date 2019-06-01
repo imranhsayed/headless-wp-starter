@@ -1,9 +1,9 @@
 const CACHE_NAME = "simple-cache-v1";
-const urlsToCache = ["/", "/products"];
+const urlsToCache = ["/", "/products", "/getProducts"];
 
 self.addEventListener("install", event => {
 	const preLoaded = caches.open(CACHE_NAME)
-		.then(cache => cache.addAll(urlsToCache))
+		.then(cache => cache.addAll(urlsToCache));
 	event.waitUntil(preLoaded);
 });
 

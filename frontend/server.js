@@ -54,6 +54,10 @@ app
 			app.render(req, res, actualPage, queryParams);
 		});
 
+		server.get( '/products', ( req, res ) => {
+			return app.render( req, res, '/products' );
+		} );
+
 		/**
 		 * Get All products
 		 */
@@ -80,7 +84,7 @@ app
 
 		server.get( '/sw.js', ( req, res ) => {
 			res.setHeader('content-type', 'text/javascript');
-			createReadStream('./offline/serviceWorker.js').pipe(res);
+			createReadStream('./sw.js').pipe(res);
 		} );
 
 		server.get('*', (req, res) => {
