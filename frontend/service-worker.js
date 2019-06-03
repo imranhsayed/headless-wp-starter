@@ -1,5 +1,5 @@
 // Cache version.
-const cacheName = 'CSv3';
+const cacheName = 'WNv2';
 
 /**
  * Paths for the files to be cached.
@@ -14,6 +14,10 @@ const cachedFiles = [
 	'/getProducts',
 	'/products',
 	'/page/sample-page',
+	'/static/manifest/manifest.json',
+	'/static/android-chrome-192x192.png',
+	'/static/android-chrome-512x512.png',
+	'/static/favicon.ico'
 ];
 
 /**
@@ -94,7 +98,8 @@ self.addEventListener( 'activate', ( event ) => {
  */
 self.addEventListener( 'fetch', ( event ) => {
 
-	console.warn( `Fetch event occured on url: ${event.request.url}` );
+	fetch( '/getProducts' );
+	console.warn( `Fetch event occurred on url: ${event.request.url}` );
 
 	/**
 	 * respondWith() takes a promise

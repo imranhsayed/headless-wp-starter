@@ -1,12 +1,6 @@
 const express = require('express');
 const next = require('next');
 
-
-
-const path = require( 'path' );
-const { createServer } = require('http');
-const { join } = require('path');
-const { parse } = require('url')
 const { createReadStream } = require('fs');
 
 const dev = process.env.NODE_ENV !== 'production';
@@ -82,9 +76,9 @@ app
 		} );
 
 
-		server.get( '/sw.js', ( req, res ) => {
+		server.get( '/service-worker.js', ( req, res ) => {
 			res.setHeader('content-type', 'text/javascript');
-			createReadStream('./sw.js').pipe(res);
+			createReadStream('./service-worker.js').pipe(res);
 		} );
 
 		server.get('*', (req, res) => {

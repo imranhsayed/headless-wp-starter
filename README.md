@@ -8,6 +8,9 @@
 4. `docker-compose up -d`
 5. Once install add this to your wp-config file ( `define('JWT_AUTH_SECRET_KEY', '&BZd]N-ghz|hbH`=%~a5z(`mR=n%7#8-Iz@KoqtDhQ6(8h$og%-IbI#>N*T`s9Dg');` )
 
+## Demo :video-camera:
+![](demo.gif)
+
 ## Backend ( WordPress Dashboard ): ( http://localhost:8080/wp-admin/ )
 
 * Start Docker for WordPress

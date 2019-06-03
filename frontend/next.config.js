@@ -1,8 +1,9 @@
 const path = require('path');
 const glob = require('glob');
 const withOffline = require('next-offline');
+const { withPlugins } = require('next-compose-plugins');
 
-module.exports = {
+module.exports = withOffline({
 	webpack: config => {
 		config.module.rules.push(
 			{
@@ -36,4 +37,4 @@ module.exports = {
 		);
 		return config;
 	},
-};
+});
