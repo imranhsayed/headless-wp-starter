@@ -13,7 +13,7 @@ const cachedFiles = [
 	'/',
 	'/getProducts',
 	'/products',
-	'/page/sample-page'
+	'/page/sample-page',
 ];
 
 /**
